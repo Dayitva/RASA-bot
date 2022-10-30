@@ -1,0 +1,178 @@
+version: "3.1"
+
+nlu:
+- regex: context
+  examples: |
+    - contract
+    - smart contract
+    - asset
+    - participant
+    - transaction
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - I want to understand blockchain
+    - Cook food for me
+    - What is 2+2?
+    - What is the meaning of life?
+    - What is the capital of India?
+
+- intent: creation
+  examples: |
+    - I want to create a [contract](context)
+    - Create a [contract](context)
+    - Develop a [smart contract](context)
+    - I wish to develop a [smart contract](context)
+    - Create an [asset](context)
+    - I want to make an [asset](context) now
+    - Add a new [asset](context)
+    - Create a [participant](context)
+    - I wish to make a [participant](context)
+    - I want to develop a [participant](context)
+    - Please create a [transaction](context)
+    - I want to make a [transaction](context), please
+    - I wish to add a new [transaction](context)
+
+- intent: deletion
+  examples: |
+    - Delete an [asset](context)
+    - I want to remove an [asset](context) now
+    - I would like to delete an [asset](context)
+    - Remove a [participant](context)
+    - I wish to delete a [participant](context)
+    - I want to remove a [participant](context)
+    - Please delete a [transaction](context)
+    - I want to remove a [transaction](context), please
+    - I would like to delete a [transaction](context)
+
+- intent: updation
+  examples: |
+    - I want to edit a [contract](context)
+    - Update the [smart contract](context)
+    - Edit an [asset](context)
+    - I want to change an [asset](context) now
+    - Change a [participant](context)
+    - I wish to edit a [participant](context)
+    - I want to update a [participant](context)
+    - Please edit a [transaction](context)
+    - I want to change a [transaction](context), please
+
+- intent: reading
+  examples: |
+    - Read an [asset](context)
+    - I want to see an [asset](context) now
+    - Show me the [asset](context)
+    - See a [participant](context)
+    - I wish to read a [participant](context)
+    - I want to see a [participant](context)
+    - Please read a [transaction](context)
+    - I want to see a [transaction](context), please
+
+- intent: set_name
+  examples: |
+    - I want to set the (name)[property] of the [contract](context) to [ContractName](value)
+    - Set the (name)[property] of the [contract](context) to [ContractName](value)
+    - The (name)[property] of the [smart contract](context) should be [ContractName](value)
+    - Set the (name)[property] of the [asset](context) to [AssetName](value), please
+    - I want to the (name)[property] the [asset](context) as [AssetName](value)
+    - The [asset's](context) (name)[property] is [AssetName](value)
+    - I wish to (name)[property] the [participant](context) as [ParticipantName](value)
+    - I wish to set the (name)[property] of the [participant](context) to [ParticipantName](value)
+    - Set the (name)[property] of the [participant](context) to [ParticipantName](value)
+    - Please set the (name)[property] of the [transaction](context) to [TransactionName](value)
+    - I want to set the (name)[property] of the [transaction](context) to [TransactionName](value)
+    - Call the [transaction](context) as [TransactionName](value)
+
+- intent: nlu_fallback
+  examples: |
+    - Dobby
+    - Harry

@@ -1,0 +1,101 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - out_of_scope
+  - nlu_fallback
+  - creation
+  - reading
+  - updation
+  - deletion
+  - set_name
+
+entities:
+  - context
+  - property
+  - value
+
+slots:
+  context:
+    type: categorical
+    values:
+      - contract
+      - asset
+      - participant
+      - transaction
+    mappings:
+    - type: from_entity
+      entity: context
+
+  context:
+    type: categorical
+    values:
+      - name
+      - type
+      - list
+      - parameter
+      - identifier
+      - condition
+    mappings:
+    - type: from_entity
+      entity: property
+
+  value:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: value
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+  - text: Yes, sure! I have created a contract for you. What is the name of the {context}?
+  
+  utter_name:
+  - text: I have created a {context} called {value}. What would you like to do next?
+  
+  utter_edit:
+  - text: Yes, I can help you with that. What is the name of the {context} that you would like to edit?
+  
+  utter_delete:
+  - text: Yes, I can help you with that. What is the name of the {context} that you would like to delete?
+  
+  utter_read:
+  - text: Yes, I can help you with that. What is the name of the {context} that you would like to read?
+  
+  utter_gotcha:
+  - text: Gotcha!
+  
+  utter_intent_not_recognized:
+  - text: Sorry, I didn't understand that. Could you rephrase?
+  
+  utter_out_of_scope:
+  - text: Sorry, I don't know how to do that.
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
